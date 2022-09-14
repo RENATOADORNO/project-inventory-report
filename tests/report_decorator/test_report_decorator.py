@@ -2,33 +2,33 @@ from inventory_report.reports.colored_report import ColoredReport
 from inventory_report.reports.simple_report import SimpleReport
 
 
-PRODUCTS = [
+MOCK_LIST = [
     {
         "id": "1",
-        "nome_do_produto": "Produto 1",
-        "nome_da_empresa": "Empresa 1",
+        "nome_do_produto": "Steak de Frango Sadia 100g",
+        "nome_da_empresa": "Sadia",
         "data_de_fabricacao": "2021-05-01",
         "data_de_validade": "2023-06-02",
-        "numero_de_serie": "001",
-        "instrucoes_de_armazenamento": "Armazenar em local seguro",
+        "numero_de_serie": "23091827391827631",
+        "instrucoes_de_armazenamento": "Manter em local gelado",
     },
     {
         "id": "2",
-        "nome_do_produto": "Produto 2",
-        "nome_da_empresa": "Empresa 2",
+        "nome_do_produto": "Tang Sabor Laranja",
+        "nome_da_empresa": "Mondelēz International",
         "data_de_fabricacao": "2022-06-15",
         "data_de_validade": "2023-07-15",
-        "numero_de_serie": "002",
-        "instrucoes_de_armazenamento": "Armazenar em local quente",
+        "numero_de_serie": "36128736192873162",
+        "instrucoes_de_armazenamento": "Manter em local arejado",
     },
     {
         "id": "3",
-        "nome_do_produto": "Produto 3",
-        "nome_da_empresa": "Empresa 3",
+        "nome_do_produto": "Tang Sabor Uva",
+        "nome_da_empresa": "Mondelēz International",
         "data_de_fabricacao": "2022-06-15",
         "data_de_validade": "2023-07-15",
-        "numero_de_serie": "003",
-        "instrucoes_de_armazenamento": "Armazenar em local frio",
+        "numero_de_serie": "92387120983712937",
+        "instrucoes_de_armazenamento": "Manter em local arejado",
     },
 ]
 
@@ -36,11 +36,11 @@ PRODUCTS = [
 def test_decorar_relatorio():
     report = ColoredReport(SimpleReport)
 
-    send_report = report.generate(PRODUCTS)
+    send_report = report.generate(MOCK_LIST)
 
     assert "\033[32mData de fabricação mais antiga:\033[0m" in send_report
     assert "\033[36m2021-05-01\033[0m" in send_report
     assert "\033[32mData de validade mais próxima:\033[0m" in send_report
     assert "\033[36m2023-06-02\033[0m" in send_report
     assert "\033[32mEmpresa com mais produtos:\033[0m" in send_report
-    assert "\033[31mEmpresa 2\033[0m" in send_report
+    assert "\033[31mMondelēz International\033[0m" in send_report

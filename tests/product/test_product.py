@@ -12,9 +12,9 @@ def test_cria_produto():
         "Conservar em local seco.",
     )
     assert product.id == 1
-    assert product.nome_do_produto == "Monitor"
-    assert product.nome_da_empresa == "Teclado"
-    assert product.data_de_fabricacao == "2018-06-06"
-    assert product.data_de_validade == "2025-08-22"
-    assert product.numero_de_serie == "001"
-    assert product.instrucoes_de_armazenamento == "Armazenar em local Seguro"
+    assert product.nome_do_produto == "Todynho 200ml"
+    assert product.nome_da_empresa == "PepsiCo"
+    assert product.data_de_fabricacao == "2022-06-16"
+    assert product.data_de_validade == "2023-08-15"
+    assert product.numero_de_serie == "87340918374189237"
+    assert product.instrucoes_de_armazenamento == "Conservar em local seco."
