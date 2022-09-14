@@ -4,12 +4,12 @@ from inventory_report.inventory.product import Product
 def test_cria_produto():
     product = Product(
         1,
-        "Produto 1",
-        "Empresa 1",
-        "2018-06-06",
-        "2025-08-22",
-        "001",
-        "Armazenar em local Seguro",
+        "Todynho 200ml",
+        "PepsiCo",
+        "2022-06-16",
+        "2023-08-15",
+        "87340918374189237",
+        "Conservar em local seco.",
     )
     assert product.id == 1
     assert product.nome_do_produto == "Monitor"
